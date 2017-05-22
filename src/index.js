@@ -1,9 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import StateExample from './components/StateExample';
+import App from './components/App';
 
 const rootElement = document.getElementById('root');
-ReactDOM.render(
-    <StateExample />,
-    rootElement
-);
+ReactDOM.render(<App />, rootElement);
