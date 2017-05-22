@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './Header';
@@ -6,6 +5,7 @@ import Content from './Content';
 import RandomNumber from './RandomNumber';
 
 class App extends React.Component {
+
     constructor(props){
         super(props);
 
@@ -17,29 +17,28 @@ class App extends React.Component {
     }
 
     updateValue(randomValue){
-        this.setState=({
+        this.setState({
             value: randomValue
         });
     }
 
-    render() {
-        return (
+    render(){
+        return  (
             <div>
-                <Header title={ this.props.headerTitle } />
+                <Header title={ this.props.headerTitle }/>
                 <Content title={ this.props.contentTitle }
-                        body={ this.props.contentBody }/>
-                    <RandomNumber number={this.state.value}
-                                    onUpdate={this.updateValue}/>
+                          body={ this.props.contentBody }/>
+                      <RandomNumber number={this.state.value}
+                                  onUpdate={this.updateValue} />
             </div>
         );
     }
 }
 
-App.defaultProps={
-        headerTitle: 'Default header',
-        contentTitle: 'Default contentTitle',
-        contentBody: 'Default contentBody'
+App.defaultProps = {
+    headerTitle: 'Default header',
+    contentTitle: 'Default contentTitle',
+    contentBody: 'Default contentBody'
 };
-
 
 export default App;
