@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import StateExample from './components/StateExample';
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(
-    <App />,
+    <StateExample />,
     rootElement
 );
