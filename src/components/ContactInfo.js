@@ -6,8 +6,19 @@ class ContactInfo extends React.Component {
     }
 
     render() {
+        let getStyle = isSelect => {
+            if(!isSelect) return;
+
+            let style = {
+                fontWeight: 'bold',
+                backgroundColor: '#4efcd8'
+            };
+            return style;
+        }
+
         return(
-            <li onClick={this.handleClick.bind(this)}>{ this.props.name } {this.props.phone}</li>
+            <li style={getStyle(this.props.isSelected)}
+                onClick={this.handleClick.bind(this)}>{ this.props.name } {this.props.phone}</li>
         );
     }
 }
