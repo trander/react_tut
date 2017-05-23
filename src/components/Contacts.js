@@ -3,6 +3,7 @@ import update from 'react-addons-update';
 import ContactInfo from './ContactInfo';
 import ContactCreator from './ContactCreator';
 import ContactRemover from './ContactRemover';
+import ContactEditor from './ContactEditor';
 
 class Contacts extends React.Component {
     constructor(props) {
@@ -65,6 +66,10 @@ class Contacts extends React.Component {
         });
     }
 
+    _editContact(name, phone) {
+
+    }
+
     render() {
         return (
             <div>
@@ -80,7 +85,8 @@ class Contacts extends React.Component {
                     })}
                 </ul>
                 <ContactCreator onInsert={this._insertContact.bind(this)} />
-                <ContactRemover onRemove={this._removeContact.bind(this)}/>
+                <ContactRemover onRemove={this._removeContact.bind(this)} />
+                <ContactEditor onEdit={this._editContact.bind(this)} isSelected={this.state.selectedKey != -1} contact={this.state.selected} />
             </div>
         );
     }
