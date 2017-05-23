@@ -1,4 +1,5 @@
 import React from 'react';
+import ContactInfo from './ContactInfo';
 
 class Contacts extends React.Component {
     render() {
@@ -6,10 +7,10 @@ class Contacts extends React.Component {
             <div>
                 <h1> Contacts </h1>
                 <ul>
-                    <li> A 010-0000-0001 </li>
-                    <li> B 010-0000-0002 </li>
-                    <li> C 010-0000-0003 </li>
-                    <li> D 010-0000-0004 </li>
+                    <ContactInfo name="Abet" phone="010-0000-0001"/>
+                    <ContactInfo name="Betty" phone="010-0000-0002"/>
+                    <ContactInfo name="Charlie" phone="010-0000-0003"/>
+                    <ContactInfo name="David" phone="010-0000-0004"/>
                 </ul>
             </div>
         );
