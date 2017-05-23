@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Header from './Header';
 import Content from './Content';
 
@@ -16,8 +17,8 @@ class App extends React.Component {
 
 App.defaultProps = {
     headerTitle: 'Default Header',
-    contentTitle: 'Default Content Title',
-    contentBody: 'Default Content Body'
+    contentTitle: 5,
+    contentBody: undefined
 };
 
 export default App;
