@@ -13,4 +13,11 @@ class App extends React.Component {
         );
     }
 }
+
+App.defaultProps = {
+    headerTitle: 'Default Header',
+    contentTitle: 'Default Content Title',
+    contentBody: 'Default Content Body'
+};
+
 export default App;
