@@ -5,14 +5,11 @@ import Content from './Content';
 import RandomNumber from './RandomNumber';
 
 class App extends React.Component {
-
     constructor(props){
         super(props);
-
         this.state = {
             value: Math.round(Math.random()*100)
         };
-
         this.updateValue = this.updateValue.bind(this);
     }
 
