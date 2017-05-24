@@ -24,7 +24,7 @@ class Contacts extends React.Component {
     }
 
     _insertContact(name, phone){
-        let newState = React.addons.update(this.state, {
+        let newState = update(this.state, {
             contactData: {
                 $push: [{"name": name, "phone": phone}]
             }
@@ -62,12 +62,12 @@ class Contacts extends React.Component {
 
     _removeContact(){
         if(this.state.selectedKey==-1){
-            console.log("contact not selected");
+            console.log("contact is not selected");
             return;
         }
 
         this.setState({
-            contactData: React.addons.update(
+            contactData: update(
                 this.state.contactData,
                 {
                     $splice: [[this.state.selectedKey, 1]]
@@ -79,7 +79,7 @@ class Contacts extends React.Component {
 
     _editContact(name, phone){
         this.setState({
-            contactData: React.addons.update(
+            contactData: update(
                 this.state.contactData,
                 {
                     [this.state.selectedKey]: {
@@ -101,12 +101,10 @@ class Contacts extends React.Component {
                 <h1>Contacts</h1>
                 <ul>
                     {this.state.contactData.map((contact, i) => {
-                        return (<ContactInfo name={contact.name}
-                                            phone={contact.phone}
-                                              key={i}
-                                       contactKey={i}
-                                       isSelected={this._isSelected.bind(this)(i)}
-                                         onSelect={this._onSelect.bind(this)}/>);
+                        return (
+                            <ContactInfo name={contact.name} phone={contact.phone} key={i} contactKey={i}
+                                       isSelected={this._isSelected.bind(this)(i)} onSelect={this._onSelect.bind(this)}/>
+                        );
                     })}
                 </ul>
                 <ContactCreator onInsert={this._insertContact.bind(this)}/>
